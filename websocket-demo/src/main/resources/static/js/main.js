@@ -7,6 +7,14 @@ var messageForm = document.querySelector('#messageForm');
 var messageInput = document.querySelector('#message');
 var messageArea = document.querySelector('#messageArea');
 var connectingElement = document.querySelector('.connecting');
+var i = document.querySelectorAll("i");
+
+
+for(let x=0; x<i.length; x++){
+	let name = i[x].className
+	console.log(name);
+	i[x].style['background-color'] = getAvatarColor(name.toString());
+}
 
 var stompClient = null;
 var username = null;
@@ -106,6 +114,10 @@ function onMessageReceived(payload) {
 
 
 function getAvatarColor(messageSender) {
+	var colors = [
+    '#2196F3', '#32c787', '#00BCD4', '#ff5652',
+    '#ffc107', '#ff85af', '#FF9800', '#39bbb0'
+];
     var hash = 0;
     for (var i = 0; i < messageSender.length; i++) {
         hash = 31 * hash + messageSender.charCodeAt(i);
