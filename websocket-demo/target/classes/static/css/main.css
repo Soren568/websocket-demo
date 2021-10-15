@@ -198,6 +198,7 @@ button.accent {
     height: 42px;
     overflow: hidden;
     left: 10px;
+    bottom: 5px;
     display: inline-block;
     vertical-align: middle;
     font-size: 18px;
